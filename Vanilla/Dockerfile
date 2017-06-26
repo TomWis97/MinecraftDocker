@@ -18,7 +18,8 @@ RUN cd /opt/mc && \
     rm -rf world/*
 # Install fix users and permissions
 RUN adduser -D minecraft && \
-    chown minecraft:root -R /opt/mc
+    chown minecraft:root -R /opt/mc && \
+    chmod 770 -R /opt/mc
 #VOLUME /opt/mc
 EXPOSE 25565
 WORKDIR /opt/mc
